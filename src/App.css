@@ -1,0 +1,240 @@
+#root { 
+  width: 100vw;
+  height: 100vh;
+  background-color: "black";
+  background-image: url(./assets/stars.jpeg);
+  background-size: auto; /* Size of the background image */
+  background-position: center; /* Centers the image */
+  background-repeat: repeat-y; /* Prevents the image from repeating */
+}
+
+:root {
+  --primary-color: #435058;
+  --secondary-color: #D5D5D5;
+  --background-color: #262C31;
+  --text-color: #FE5A1D;
+  --button-background: #ED2939;
+}
+
+.react-tabs {
+  /* background-color: var(--background-color); */
+  background-color: transparent;
+}
+
+.react-tabs__tab-list {
+  /* border-bottom: 1px solid var(--secondary-color); */
+  margin: 0;
+  padding: 0;
+  padding-right: 20px;
+  display: flex;
+  justify-content: right;
+  list-style: none;
+  font-size: 1.5em; /* Increase the font size to make the tablist bigger */
+}
+
+.react-tabs__tab {
+  color: var(--secondary-color);
+  display: inline-block;
+  border: 0px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.react-tabs__tab--selected {
+  color: var(--text-color);
+  border-radius: 0px 0px 0 0;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.react-tabs__tab--selected:focus {
+  outline: none;
+}
+
+.react-tabs__tab--disabled {
+  color: GrayText;
+  cursor: default;
+}
+
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ensure it takes up full height */
+}
+
+.tab-panel {
+  justify-content: center; /* Optional */
+  align-items: center; /* Optional */
+  background-color: "blue";
+}
+
+.react-tabs__tab-panel {
+  display: none; /* Hide all tab panels by default */
+}
+
+.react-tabs__tab-panel--selected {
+  display: flex; /* Only show the selected tab panel */
+  flex: 1;
+}
+
+/* //////////////////////////////////////////////////////////////////////////// */
+/* Sci Fi Contact Buttons */
+/* //////////////////////////////////////////////////////////////////////////// */
+
+.contact-buttons-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  background-color: "transparent";
+  padding: 1rem;
+}
+
+.contact-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 60px;
+  background-color: var(--button-background);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+.contact-button:hover,
+.contact-button:focus {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  outline: none;
+}
+
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    var(--primary-color),
+    var(--button-background),
+    var(--text-color)
+  );
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-button:hover::before {
+  opacity: 1;
+  animation: shine 1.5s infinite;
+}
+
+.contact-button span {
+  margin-left: 10px;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(45deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(45deg) translate(50%, 50%);
+  }
+}
+
+@media (min-width: 640px) {
+  .contact-buttons-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* //////////////////////////////////////////////////////////////////////////// */
+/* Fonts */
+/* //////////////////////////////////////////////////////////////////////////// */
+
+@font-face {
+  font-family: 'Bring Race';
+  src: url('/src/assets/fonts/Bring Race.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Batman';
+  src: url('/src/assets/fonts/batmfa__.ttf') format('ttf'),
+       url('/src/assets/fonts/batmfo__.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Bring Race', sans-serif;
+  font-family: 'Batman', sans-serif;
+}
+
+@font-face {
+  font-family: 'Iceberg';
+  src: url('../src/assets/fonts/Iceberg-Regular.ttf')
+}
+.iceberg {
+  font-family: 'Iceberg';
+}
+
+/* //////////////////////////////////////////////////////////////////////////// */
+/* Futuristic Dropdown */
+/* //////////////////////////////////////////////////////////////////////////// */
+
+.dropdown {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+.dropdownHeader {
+  background: linear-gradient(to right, #8a2be2, #4b0082);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdownButton {
+  width: 100%;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dropdownContent {
+  background-color: white;
+  padding: 24px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.dropdownText {
+  color: #333;
+  line-height: 1.6;
+}
