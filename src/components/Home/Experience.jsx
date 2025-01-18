@@ -10,7 +10,8 @@ export const Experience = () => {
       {/* <OrbitControls/> */}
       <ScrollControls
         pages={
-          window.innerWidth > 1024 ? 4.5 : window.innerWidth > 768 ? 3.5 : 2.5
+          // window.innerWidth > 1024 ? 4.5 : window.innerWidth > 768 ? 5 : 5.5
+          4.5
         }
         damping={0.25}
       >
