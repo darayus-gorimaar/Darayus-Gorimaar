@@ -18,7 +18,16 @@ function App() {
           backgroundColor: "transparent",
         }}
       >
-        <Canvas style={{ backgroundColor: "transparent" }} camera={{ fov: 50 }}>
+        <Canvas
+          style={{
+            backgroundColor: "transparent",
+            touchAction: "none", // Disable touch interactions
+          }}
+          onPointerDown={(event) => event.stopPropagation()}
+          onPointerMove={(event) => event.stopPropagation()}
+          onPointerUp={(event) => event.stopPropagation()}
+          camera={{ fov: 50 }}
+        >
           <Experience />
         </Canvas>
       </div>

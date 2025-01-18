@@ -16,7 +16,7 @@ export const Experience = () => {
       >
         {" "}
         <Overlay />
-        {/* <Car /> */}
+        <Car />
       </ScrollControls>
     </>
   );
