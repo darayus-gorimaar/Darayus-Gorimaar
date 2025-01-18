@@ -97,24 +97,22 @@ const jobs = [
 ];
 
 export const ResumePage = () => {
-  const [currentJob, setCurrentJob] = useState(0);
-
   return (
-    <div style={{ display: "flex", flexDirection: "row", height: "100vh" }}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <Canvas
         style={{
-          height: "100vh",
-          width: "50vw",
+          height: "20vh",
+          width: "80vw",
           backgroundColor: "transparent",
         }}
-        camera={{ fov: 50, position: [0, 0, 2], near: 0.1, far: 1000 }}
+        camera={{ fov: 50, position: [0, 0, 1], near: 0.1, far: 1000 }}
       >
         <ResumeExperience />
       </Canvas>
       <div
         style={{
           flex: 1,
-          width: "50vw",
+          width: "80vw",
           display: "flex",
           flexDirection: "column", // Arrange children vertically
           justifyContent: "center", // Center children vertically

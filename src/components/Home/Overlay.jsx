@@ -37,7 +37,7 @@ const Section = (props) => {
     <section
       style={{
         opacity: 1,
-        height: "100vh", // Full viewport height for spacing
+        minHeight: "100vh", // Full viewport height for spacing
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -49,6 +49,7 @@ const Section = (props) => {
           backgroundColor: "transparent",
           borderRadius: "8px",
           padding: "20px",
+          overflow: "auto",
         }}
       >
         {props.children}
@@ -85,14 +86,15 @@ export const Overlay = () => {
           color: "black",
           textAlign: "center",
           padding: "20px",
-          marginTop: "100px",
+          marginTop: "200px",
+          minHeight: "100vh",
         }}
       >
         <h1
           style={{
             backgroundColor: "transparent",
             color: "white",
-            fontSize: "5rem",
+            fontSize: "4rem",
           }}
         >
           Darayus Gorimaar
@@ -117,7 +119,8 @@ export const Overlay = () => {
       >
         <div
           style={{
-            // minHeight: "100vh",
+            flex: 1,
+            minHeight: "100vh",
             backgroundColor: "transparent",
             padding: "48px 0",
           }}
@@ -143,8 +146,13 @@ export const Overlay = () => {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(4, 1fr)", // 4 equal columns
-                gridTemplateRows: "repeat(2, 1fr)", // 2 equal rows
+                gridTemplateColumns:
+                  window.innerWidth > 768
+                    ? "repeat(4, 1fr)"
+                    : window.innerWidth > 480
+                    ? "repeat(2, 1fr)"
+                    : "repeat(1, 1fr)",
+                gridTemplateRows: "auto",
                 gap: "24px",
               }}
             >
@@ -158,6 +166,7 @@ export const Overlay = () => {
             </div>
           </div>
         </div>
+        <h1 style={{ color: "white", fontSize: "5rem" }}>↓</h1>
       </Section>
       <Section
         style={{
@@ -169,6 +178,7 @@ export const Overlay = () => {
         }}
       >
         <ResumePage />
+        <h1 style={{ color: "white", fontSize: "5rem" }}>↓</h1>
       </Section>
       {/* <Section
         style={{

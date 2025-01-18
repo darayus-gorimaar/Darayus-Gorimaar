@@ -7,10 +7,16 @@ export const Experience = () => {
     <>
       <directionalLight position={[10, 10, 10]} intensity={10} />
       <ambientLight intensity={1} />
-      <OrbitControls enableZoom={false} />
-      <ScrollControls pages={4} damping={0.25}>
+      {/* <OrbitControls/> */}
+      <ScrollControls
+        pages={
+          window.innerWidth > 1024 ? 4.5 : window.innerWidth > 768 ? 3.5 : 2.5
+        }
+        damping={0.25}
+      >
+        {" "}
         <Overlay />
-        <Car />
+        {/* <Car /> */}
       </ScrollControls>
     </>
   );
