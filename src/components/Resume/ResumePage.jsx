@@ -105,7 +105,7 @@ export const ResumePage = () => {
           width: "80vw",
           backgroundColor: "transparent",
         }}
-        camera={{ fov: 50, position: [0, 0, 1], near: 0.1, far: 1000 }}
+        camera={{ fov: 30, position: [1, 0.3, 1], near: 0.1, far: 1000 }}
       >
         <ResumeExperience />
       </Canvas>

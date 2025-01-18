@@ -115,6 +115,7 @@ export const Overlay = () => {
           textAlign: "center",
           padding: "20px",
           marginTop: "70px",
+          flexDirection: "column",
         }}
       >
         <div
@@ -130,6 +131,7 @@ export const Overlay = () => {
               maxWidth: "1200px",
               margin: "0 auto",
               padding: "0 16px",
+              backgroundColor: "transparent",
             }}
           >
             <h1
@@ -154,6 +156,7 @@ export const Overlay = () => {
                     : "repeat(1, 1fr)",
                 gridTemplateRows: "auto",
                 gap: "24px",
+                backgroundColor: "transparent",
               }}
             >
               {skills.map((skill) => (
@@ -164,9 +167,17 @@ export const Overlay = () => {
                 />
               ))}
             </div>
+            <h1
+              style={{
+                color: "white",
+                fontSize: "5rem",
+                backgroundColor: "transparent",
+              }}
+            >
+              ↓
+            </h1>
           </div>
         </div>
-        <h1 style={{ color: "white", fontSize: "5rem" }}>↓</h1>
       </Section>
       <Section
         style={{
